@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+header {
+  position: fixed;
+  width: 80vw;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 600px;
+  gap: 10%;
+  z-index: 2;
+}
+header img {
+  width: 250px;
+}
+
+header nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+}
+
+header nav ul li {
+  text-align: center;
+}
+
+/* Espaçamento da seção para que o conteúdo não fique escondido atrás do cabeçalho */
+section {
+  background-image: radial-gradient(#000, #fff);
+  padding-top: 80px; /* Espaço suficiente para o cabeçalho fixo */
+  min-height: 100vh;
+}
+
+/* Container para os produtos com grid */
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+  gap: 20px;
+  margin: 20px;
+}
+
+/* Estilo dos produtos */
+.product {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  color: #333; /* Cor do texto dentro do produto */
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+}
+
+.product h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.product p {
+  font-size: 1em;
+  color: #555;
+}
+
+.product .price {
+  font-size: 1.2em;
+  color: #e67e22;
+  margin: 10px 0;
+}
+
+.product button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1200px) {
+  .main {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas médias */
+  }
+}
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+  }
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
